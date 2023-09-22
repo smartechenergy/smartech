@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+
+    <style>
+        /* Estilos comuns para todos os dispositivos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: rgb(255, 239, 8);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nome-pag {
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .menu-toggle {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: rgb(255, 239, 8);
+            margin: 5px 0;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: black;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            left: 0;
+        }
+
+        .menu a {
+            color: rgb(255, 239, 8);
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 90px;
+        }
+        .contact-items {
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+            justify-content: center; /* Centraliza horizontalmente os itens */
+        }
+        .contact-item {
+            flex: 1;
+            border: 1px solid black;
+            padding: 15px; /* Reduza a altura da caixa para espaçamento adequado em telas menores */
+            text-align: center;
+            margin: 10px; /* Adicione margem para espaçamento entre os itens */
+            max-width: calc(50% - 10px); /* Define a largura máxima para dois itens por linha */
+        }
+        footer {
+            position: absolute;
+            /* bottom: 0; */
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Estilos para telas menores */
+        @media screen and (max-width: 480px) {
+            .contact-items {
+                flex-direction: column; /* Empilha os itens verticalmente */
+                align-items: center; /* Centraliza horizontalmente os itens empilhados */
+                text-align: center; /* Centraliza o texto */
+            }
+
+            .contact-item {
+                max-width: 100%; /* Largura máxima de 100% para itens em telas pequenas */
+                border: none;
+            }
+        }
+
+        .contact-item img {
+            width: 30px;
+            height: 30px;
+        }
+        .contact-item h3 {
+            margin: 10px 0; /* Adicione margem interna para espaçamento vertical */
+            font-size: medium;
+        }
+        .contact-item p {
+            margin: 5px 0; /* Adicione margem interna para espaçamento vertical */
+            font-size: small;
+        }
+        .contact-item a {
+            color: black;
+            text-decoration: none;
+        }
+        .contact-feedback {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-feedback h2 {
+            margin: 0;
+        }
+        .contact-feedback label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-feedback input[type="text"],
+        .contact-feedback input[type="tel"],
+        .contact-feedback textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-feedback textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        footer {
+            position: absolute;
+            /* bottom: 0; */
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nome-pag">SMARTECH ENERGY</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="calculadora.html">Calculadora</a>
+            <a href="contato.html">Contato</a>
+            <a href="suporte.html">Suporte</a>
+        </nav>
+    </header>
+
+    <h1>Entre em Contato Conosco</h1>
+
+    <div class="contact-items">
+        <div class="contact-item">
+            <img src="image/endereco.png" alt="Ícone de Localização">
+            <p>Endereço</p>
+            <p>Av. Príncipe de Gales 821, Santo André, SP, 09060-650</p>
+        </div>
+        <div class="contact-item">
+            <img src="image/telefone.png" alt="Ícone de Telefone">
+            <p>Telefone</p>
+            <p>(11) 4979-3300</p>
+        </div>
+        <div class="contact-item">
+            <img src="image/o-email.png" alt="Ícone de Email">
+            <p>Email</p>
+            <a href="mailto:energy.smartech@gmail.com">energy.smartech@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <img src="image/instagramf.png" alt="Ícone do Instagram">
+            <p>Redes Sociais</p>
+            <a href="https://www.instagram.com/energy_smartech/">Instagram Smartech</a>
+        </div>
+    </div>
+
+    <section class="contact-feedback">
+        <h2>Feedback</h2>
+        <p>Clique no link abaixo e participe da nossa pesquisa:</p>
+        <a href="https://forms.gle/mJSK6t8hoyu8No637" target="_blank">Formulário de Feedback</a>
+    </section>
+    <footer>
+        <p>Direitos Reservados Smartech &copy; 2023</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>

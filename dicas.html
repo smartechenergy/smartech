@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=], initial-scale=1.0">
+        <title>Dicas | Smartech</title>
+
+        <style>
+                /* Estilos comuns para todos os dispositivos */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-color: #f4f4f4;
+            }
+
+            header {
+                background-color: black;
+                color: rgb(255, 239, 8);
+                padding: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+            }
+
+            .nome-pag {
+                margin-left: 20px;
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            .menu-toggle {
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background-color: rgb(255, 239, 8);
+                margin: 5px 0;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: black;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                left: 0;
+            }
+
+            .menu a {
+                color: rgb(255, 239, 8);
+                text-decoration: none;
+                margin: 10px 0;
+                font-size: 18px;
+            }
+            .main-content {
+                padding: 20px;
+                margin: 0 auto;
+                max-width: 800px;
+                margin-top: 70px;
+            }
+            .video-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px; /* Ajuste conforme necessário */
+            }
+            /* Estilo do vídeo (ajuste as dimensões conforme necessário) */
+            .video-container iframe {
+                max-width: 100%;
+                height: auto;
+            }
+            .section {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 40px;
+            }
+            .section-content {
+                text-align: justify;
+                margin-bottom: 15px;
+                margin-top: 0%;
+            }
+            .section p {
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+            h1 {
+                margin-top: 110px; /* Aumentei o espaço para o título */
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .section h2 {
+                color: #ffcc00; /* Amarelo */
+                margin-top: 10px; /* Alterado o valor para 10px */
+            }
+            .section p {
+                margin: 0 0 10px 0;
+                line-height: 1.8;
+            }
+            center-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            iframe {
+                display: block;
+                margin: 0 auto;
+            }
+            .ptitulo {
+                text-align: center;
+                margin-top: 2px;
+            }
+             /* Estilos para smartphone (max-width: 480px) */
+            @media screen and (max-width: 480px) {
+                .nome-pag {
+                    font-size: 20px;
+                }
+                .menu {
+                    display: flex;
+                }
+                .page-title {
+                    font-size: 20px;
+                    margin-top: 80px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="nome-pag">SMARTECH ENERGY</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="menu" id="menu">
+                <a href="index.html">Home</a>
+                <a href="dicas.html">Dicas</a>
+                <a href="calculadora.html">Calculadora</a>
+                <a href="contato.html">Contato</a>
+                <a href="suporte.html">Suporte</a>
+            </nav>
+        </header>
+
+    <div>
+        <h1 style="margin-top: 70px;">Por que é importante economizar energia?</h1>
+        <p class="ptitulo">Assista o video abaixo:</p>
+    </div>
+
+    <div class="video-container">
+        <iframe width="560" height="500" style="height: 240px; width: px;" src="https://www.youtube.com/embed/SjyU2CQ29pI?si=CX8xTX70RJDHtPqC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <div class="section-content">
+                <h2>Hábitos do Dia a Dia</h2>
+                <p>
+                    <b>1. Desligue equipamentos</b> <br>
+                    Sempre que você não estiver usando um aparelho eletrônico, lembre-se de desligá-lo 
+                    completamente da tomada. Muitos dispositivos continuam consumindo energia mesmo 
+                    quando estão em modo de espera. Isso é conhecido como "consumo fantasma" e pode 
+                    representar uma parte significativa do seu consumo total de energia ao longo do tempo. 
+                    Ao adotar esse hábito, você não apenas economiza energia, mas também reduz o impacto 
+                    ambiental causado pelo desperdício de recursos.
+                </p>
+                <p>
+                    <b>2. Manutenção Regular</b> <br>
+                    Realizar manutenção periódica em sistemas de aquecimento, refrigeração e encanamento 
+                    é crucial para garantir que esses equipamentos operem com eficiência máxima. Trocar 
+                    filtros sujos, limpar bobinas e verificar vazamentos são práticas que podem não apenas 
+                    manter seu consumo de energia sob controle, mas também prolongar a vida útil dos 
+                    aparelhos, evitando gastos desnecessários e reduzindo o impacto ambiental.
+                </p>
+                <p>
+                    <b>3. Uso Consciente</b> <br>
+                    Estabelecer uma cultura de uso consciente de energia é crucial para a redução do 
+                    consumo. Eduque todos os membros da família sobre a importância de economizar energia 
+                    no dia a dia. Desde apagar as luzes e desligar equipamentos até evitar o desperdício 
+                    de água quente, cada pequeno esforço contribui para um ambiente mais sustentável. 
+                    Ao trabalhar juntos, vocês não apenas economizam recursos, mas também criam um impacto 
+                    positivo no planeta para as gerações futuras.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-content">
+                <h2>Eletrodomésticos</h2>
+                <p>
+                    <b>1. Eficiência Energética</b> <br>
+                    Sempre que você não estiver usando um aparelho eletrônico, lembre-se de desligá-lo 
+                    completamente da tomada. Muitos dispositivos continuam consumindo energia mesmo quando 
+                    estão em modo de espera. Isso é conhecido como "consumo fantasma" e pode representar 
+                    uma parte significativa do seu consumo total de energia ao longo do tempo. 
+                </p>
+                <p>
+                    <b>2. Consumo anual de Energia</b> <br>
+                    Ao escolher um eletrodoméstico, verifique a etiqueta de consumo anual de energia. 
+                    Isso lhe dará uma ideia mais clara de quanto o aparelho consumirá ao longo do ano e 
+                    ajudará na comparação entre diferentes modelos.
+                </p>
+                <p>
+                    <b>3. Tamanho Adequado</b>
+                    Escolha o tamanho adequado para suas necessidades. Eletrodomésticos maiores geralmente 
+                    consomem mais energia. Evite comprar aparelhos excessivamente grandes para evitar 
+                    desperdício de energia e espaço.
+                </p>
+                <!-- Mais parágrafos aqui -->
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-content">
+                <h2>Aproveitamento do Sol</h2>
+                <p><b>1. Janelas Bem Abertas</b> <br>
+                    Outra dica para aproveitar a luz do Sol na sua casa é criar o hábito de abrir as janelas, para que a claridade consiga entrar facilmente nos ambientes.
+                    Ao abrir as janelas, mesmo em dias nublados, a claridade natural reduz a necessidade do 
+                    uso de luzes artificiais, o que diminui o consumo de fontes de energia externas.
+                    Caso você não goste de deixar as janelas abertas por sentir que está perdendo sua 
+                    privacidade, considere contar com cortinas de tecidos mais finos. Assim, mesmo com as 
+                    cortinas fechadas, a luz consegue entrar nos ambientes.
+                </p>
+                <p><b>2. Considere Gerar Energia Solar</b> <br> 
+                    A energia solar é um dos processos de geração de eletricidade mais limpos que temos. 
+                    Funciona assim: a partir de placas capazes de captar a luz do Sol, um sistema consegue 
+                    transformar o calor dos raios solares em energia elétrica. Essa instalação pode ser feita 
+                    enquanto uma casa está em construção, ou pode ser feita posteriormente, em residências prontas. 
+                    E, nesse caso, é preciso contar com empresas especializadas no assunto.
+                </p>
+                <p><b>3. Espelhos em Lugares Estratégicos</b> <br>
+                    E por falar em aproveitar ao máximo a luz do Sol, uma dica que é antiga (mas funciona) 
+                    é o uso estratégico de espelhos. Como o espelho reflete, quando bem posicionado, 
+                    consegue levar a luz natural ainda mais longe, como se fizesse uma multiplicação da 
+                    claridade. Uma boa estratégia é colocar espelhos na direção de janelas ou entradas de luz natural. Assim, toda a 
+                    claridade que entrar, será rebatida e espalhada para outros ambientes. Além de ajudar a aproveitar a luz do Sol na 
+                    sua casa, usar espelhos dá um charme extra na decoração e ajudam a criar a sensação de amplitude em um cômodo.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-content">
+                <h2>Sinalizações e Horários</h2>
+                <p>A Agência Nacional de Energia Elétrica (ANEEL) é a entidade reguladora responsável por monitorar e regular o setor elétrico no Brasil. Uma das formas pelas quais a ANEEL gerencia o fornecimento de energia elétrica e seus custos é através do sistema de bandeiras tarifárias. As bandeiras tarifárias são um mecanismo de sinalização que visa informar aos consumidores sobre as condições de geração de energia elétrica e seu impacto nos custos da eletricidade. <br>
+                    Existem três tipos de bandeiras tarifárias:
+                </p>
+                <ol>
+                    <li> <strong>Bandeira Verde:</strong>
+                        A bandeira verde indica que as condições de geração de energia estão favoráveis, geralmente com níveis adequados de chuva e reservatórios cheios. Nesse cenário, não há custos adicionais na conta de luz, e os consumidores pagam a tarifa normal estabelecida para o período.
+                    </li> <br>
+                    <li><strong>Bandeira Amarela:</strong>A bandeira amarela indica que as condições de geração estão menos favoráveis, resultando em custos extras na produção de energia. Nesse caso, é adicionado um valor extra à tarifa de energia, que é repassado aos consumidores. A bandeira amarela alerta para a necessidade de moderação no consumo, visto que os custos de geração estão um pouco elevados.
+                    </li> <br>
+                    <li><strong>Bandeira Vermelha:</strong>A bandeira vermelha indica que as condições de geração de energia estão desfavoráveis, como em períodos de seca prolongada que impactam o nível dos reservatórios. Quando a bandeira vermelha é acionada, há uma necessidade maior de geração de energia por meio de fontes mais caras, como termelétricas. Como resultado, um valor adicional significativo é acrescentado à tarifa de energia, refletindo o aumento dos custos de produção. A bandeira vermelha serve como um alerta para a importância da economia de energia e do uso consciente.
+                    </li> <br>
+                </ol>
+                <p>A tarifa branca é uma modalidade de tarifação de energia elétrica oferecida aos consumidores pela Agência Nacional de Energia Elétrica (ANEEL) no Brasil. Ela foi introduzida como uma alternativa à tarifa convencional, com o objetivo de proporcionar aos consumidores a oportunidade de economizar na conta de energia elétrica, incentivando um consumo mais consciente e eficiente ao longo do dia.
+                    Diferentemente da tarifa convencional, que tem um valor único para o kWh (quilowatt-hora) de energia consumida durante todo o dia, a tarifa branca varia ao longo do dia e da semana, de acordo com a demanda de energia no sistema elétrico. A tarifa branca é dividida em três faixas horárias:
+                    Horário de Ponta: É o período do dia em que a demanda por energia elétrica é maior, geralmente no início da noite, quando as pessoas retornam para casa e iniciam suas atividades domésticas. Durante esse período, a tarifa branca é mais cara, refletindo o maior custo de geração e distribuição de energia.
+                    Horário Intermediário: É o período que compreende as horas entre o horário de ponta e o horário fora de ponta. A tarifa nesse horário é intermediária, com um valor menor que o horário de ponta, mas ainda superior ao horário fora de ponta.
+                    Horário Fora de Ponta: É o período em que a demanda por energia é menor, geralmente durante a madrugada e parte da manhã. Nesse período, a tarifa branca é mais baixa, refletindo os menores custos de geração e distribuição de energia. <br>
+                    Horários de ponta dos principais estados brasileiros:
+                </p>
+                <ul>
+                    <li>Cemig (MG): 17h às 19h59</li>
+                    <li>Enel (SP): 17h30 às 20h29</li>
+                    <li>Light (RJ): 17h30 às 20h29</li>
+                    <li>CEB (DF): 18h às 20h59</li>
+                    <li>CPFL (SP, PR,RS, MG): 18h às 20h59</li>
+                    <li>CEEE (RS): 18h às 20h59</li>
+                    <li>Celesc (SC): 18h às 20h59</li>
+                    <li>Coelba (BA): 18h às 20h59</li>
+                    <li>Copel (PR): 18h às 20h59</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Direitos Reservados Smartech &copy; 2023</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>

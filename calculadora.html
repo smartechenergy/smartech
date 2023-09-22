@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Painel Solar</title>
+
+        <style>
+                body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-color: #f4f4f4;
+            }
+
+            header {
+                background-color: black;
+                color: rgb(255, 239, 8);
+                padding: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+            }
+
+            .nome-pag {
+                margin-left: 20px;
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            .menu-toggle {
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background-color: rgb(255, 239, 8);
+                margin: 5px 0;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: black;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                left: 0;
+            }
+
+            .menu a {
+                color: rgb(255, 239, 8);
+                text-decoration: none;
+                margin: 10px 0;
+                font-size: 18px;
+            }
+            .container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                margin-top: 100px;
+                width: 70%;
+                margin: 100px auto;
+            }
+            h1 {
+                color: #333;
+                margin-top: 0;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+                margin-top: 20px;
+            }
+            input[type="number"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            button {
+                background-color: black;
+                color: rgb(255, 239, 8);
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+            button:hover {
+                background-color: rgb(255, 239, 8);
+                color: black;
+            }
+            p#resultado {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            p#erro {
+                color: red;
+                font-weight: bold;
+            }
+            .informative-space {
+                background-color: black; /* Cor de fundo modificada */
+                padding: 20px;
+                text-align: center;
+                font-size: 15px; /* Tamanho da fonte aumentado */
+                color: rgb(255, 239, 8); /* Texto em branco */
+                display: none;
+                border-radius: 5px; /* Adicionado arredondamento */
+                margin-top: 20px; /* Espaçamento superior aumentado */
+                width: 70%;
+                align-self: center;
+                font-weight: bold; /* Texto em negrito */
+                margin: 20px auto; /* Centraliza horizontalmente */
+            }
+            footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="nome-pag">SMARTECH ENERGY</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="menu" id="menu">
+                <a href="index.html">Home</a>
+                <a href="dicas.html">Dicas</a>
+                <a href="calculadora.html">Calculadora</a>
+                <a href="contato.html">Contato</a>
+                <a href="suporte.html">Suporte</a>
+            </nav>
+        </header>
+        <div class="container">
+            <h1>Calculadora de Painel Solar</h1>
+            <label for="consumoMensal">Consumo Mensal (kWh):</label>
+            <input type="number" id="consumoMensal" placeholder="Digite o consumo mensal" min="0" step="0.01">
+            <button id="calcular">Calcular</button>
+            <button id="reiniciar" style="display: none;">Reiniciar</button>
+            <p id="resultado"></p>
+            <p id="erro"></p>
+        </div>
+
+        <!-- Espaço informativo (inicialmente oculto) -->
+        <div class="informative-space" id="informativeSpace">
+            <p>É importante ressaltar que a quantidade de painéis solares necessários pode variar consideravelmente. Isso ocorre devido a diferenças nas condições regionais, na eficiência dos painéis e nos modelos escolhidos. Portanto, a escolha do sistema solar adequado para suas necessidades deve levar em consideração esses fatores variáveis.</p>
+        </div>
+
+        <script>
+            const calcularButton = document.getElementById('calcular');
+            const reiniciarButton = document.getElementById('reiniciar');
+            const consumoMensalInput = document.getElementById('consumoMensal');
+            const resultadoElement = document.getElementById('resultado');
+            const erroElement = document.getElementById('erro');
+            const informativeSpace = document.getElementById('informativeSpace');
+
+            calcularButton.addEventListener('click', function () {
+                const consumoMensal = parseFloat(consumoMensalInput.value);
+                
+                if (consumoMensal > 0) {
+                    const eficienciaPainel = 0.15;
+                    const horasDeSolPorDia = 5;
+
+                    const energiaDiariaNecessaria = consumoMensal / 30;
+                    const energiaAnualNecessaria = energiaDiariaNecessaria * 365;
+                    const potenciaPainelNecessaria = energiaAnualNecessaria / (eficienciaPainel * horasDeSolPorDia * 365);
+
+                    resultadoElement.textContent = `Você precisa de um painel solar com aproximadamente ${potenciaPainelNecessaria.toFixed(2)} kWp para suprir o consumo.`;
+
+                    reiniciarButton.style.display = 'inline-block';
+                    informativeSpace.style.display = 'block';
+                    erroElement.textContent = '';
+                    consumoMensalInput.disabled = true;
+                } else {
+                    erroElement.textContent = 'O consumo deve ser maior que zero.';
+                    resultadoElement.textContent = '';
+                }
+            });
+
+            reiniciarButton.addEventListener('click', function () {
+                resultadoElement.textContent = '';
+                consumoMensalInput.value = '';
+                reiniciarButton.style.display = 'none';
+                informativeSpace.style.display = 'none';
+                erroElement.textContent = '';
+                consumoMensalInput.disabled = false;
+            });
+
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.display === "flex") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "flex";
+                }
+            }
+        </script>
+        <footer>
+            <p>Direitos Reservados Smartech &copy; 2023</p>
+        </footer>
+    </body>
+</html>

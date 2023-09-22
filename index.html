@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Smartech</title>
+    <style>
+        /* Estilos comuns para todos os dispositivos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: rgb(255, 239, 8);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nome-pag {
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .menu-toggle {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: rgb(255, 239, 8);
+            margin: 5px 0;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: black;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            left: 0;
+        }
+
+        .menu a {
+            color: rgb(255, 239, 8);
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .page-title {
+            margin-top: 100px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .image-container {
+            margin: 20px 5%;
+            width: 90%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .image-text {
+            text-align: justify;
+            margin-top: 20px;
+            margin-bottom: 60px;
+            font-size: 18px;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        /* Estilos para smartphone (max-width: 480px) */
+        @media screen and (max-width: 480px) {
+            .nome-pag {
+                font-size: 20px;
+            }
+            .menu {
+                display: flex;
+            }
+            .page-title {
+                font-size: 24px;
+                margin-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nome-pag">SMARTECH ENERGY</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="calculadora.html">Calculadora</a>
+            <a href="contato.html">Contato</a>
+            <a href="suporte.html">Suporte</a>
+        </nav>
+    </header>
+    <div class="page-title">
+        Tecnologia e Sustentabilidade
+    </div>
+    <div class="image-container">
+        <div class="image">
+            <img class="img3" src="image/imagem3home.jpeg" alt="Imagem 3" width="90%" height="50%">
+        </div>
+        <div class="image-text">
+            <p>Na Smartech, estamos empenhados em tornar o mundo mais sustentável, e nosso projeto estrela, 
+                o Smartech Energy, concentra-se na energia solar como pilar fundamental desse compromisso. 
+                Estamos aqui para convidar você a se juntar a nós nessa jornada emocionante em direção a um 
+                futuro mais verde e energeticamente responsável. A sustentabilidade é mais do que apenas uma 
+                palavra da moda; é uma necessidade imperativa para preservar o nosso planeta para as gerações 
+                futuras. A mudança climática e a escassez de recursos naturais são desafios que todos 
+                enfrentamos, e é por isso que a sustentabilidade está no cerne de nossa missão. Queremos
+                ajudar a proteger o meio ambiente e economizar recursos valiosos para as gerações futuras,
+                e a energia solar desempenha um papel crucial nesse cenário. A tecnologia desempenha um 
+                papel vital na promoção da sustentabilidade. Por meio da inovação, podemos criar soluções 
+                eficazes para reduzir nosso impacto ambiental. A energia solar é um exemplo brilhante disso. 
+                Com avanços na tecnologia solar, agora temos a capacidade de aproveitar uma fonte de energia 
+                limpa e abundante, reduzindo nossas emissões de carbono e dependência de combustíveis 
+                fósseis. Aqui na Smartech, queremos que você faça parte dessa mudança positiva. Explore 
+                nossa calculadora de energia solar e descubra como você pode contribuir para um futuro mais 
+                sustentável. Vamos juntos criar um mundo onde a tecnologia e a sustentabilidade se unem para
+                um planeta mais verde e próspero. Junte-se a nós na Smartech Energy e seja parte da solução
+                sustentável que nosso planeta tanto precisa. Comece agora e veja como a energia solar pode
+                transformar o seu mundo e o nosso planeta!</p>
+        </div>
+    </div>
+    <footer>
+        <p>Direitos Reservados Smartech &copy; 2023</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
